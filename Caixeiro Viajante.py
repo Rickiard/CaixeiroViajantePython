@@ -13,7 +13,6 @@ def distance (location1, location2):
 
 def CaixeiroViajante (cidades):
     melhorRota = []
-    dist = []
     menorDistancia = 0
 
     return (melhorRota, menorDistancia)
