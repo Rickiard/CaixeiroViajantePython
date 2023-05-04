@@ -33,3 +33,7 @@ def CaixeiroViajante (cidades):
     
     return (melhorRota, menorDistancia)
 
+melhorRota, menorDistancia = CaixeiroViajante(cidades)
+print("\nMelhor rota:", melhorRota)
+print("\nMenor distância:", menorDistancia, "\n")
+
