@@ -14,11 +14,18 @@ def distance (location1, location2):
 def CaixeiroViajante (cidades):
     melhorRota = []
     menorDistancia = 0
+    a = 0
+    dist = 1000000000
+    for o in range(len(cidades))
+        for i in range(len(cidades))
+            if distance(cidades[a], cidades[i]) < dist:
+                dist = distance(cidades[a], cidades[i])
+                del melhorRota[-1]
+                melhorRota.append(cidades[i])
+                a = i
 
-    for i in range(1, len(cidades)):
-        dists = {cidades[i]:distance(fst(cidades[0]),(cidades[i]))}
-        
-
+        menorDistancia = min(dists)
+    
     return (melhorRota, menorDistancia)
 
 melhorRota, menorDistancia = CaixeiroViajante(cidades)
