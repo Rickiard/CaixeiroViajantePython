@@ -23,3 +23,4 @@ def CaixeiroViajante (cidades):
 melhorRota, menorDistancia = CaixeiroViajante(cidades)
 print("Melhor rota:", melhorRota)
 print("Menor distância:", menorDistancia)
+
