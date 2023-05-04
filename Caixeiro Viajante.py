@@ -15,6 +15,9 @@ def CaixeiroViajante (cidades):
     melhorRota = []
     menorDistancia = 0
 
+    for i in range(len(cidades)):
+        dict = {CaixeiroViajante(cidades):cidades[i]}
+
     return (melhorRota, menorDistancia)
 
 melhorRota, menorDistancia = CaixeiroViajante(cidades)
