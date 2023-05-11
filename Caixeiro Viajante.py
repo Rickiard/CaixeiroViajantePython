@@ -44,20 +44,6 @@ def CaixeiroViajante (cidades):
                 ant = menorDistancia
 
         pos = pos + 1
-
-    # for o in range(1, len(cidades)):
-      #  for i in range(len(cidades)):
-       #     if distance(cidades[a], cidades[i]) < dist and i != a:
-        #        dist = distance(cidades[a], cidades[i])
-
-         #       if dist < menorDistancia:
-          #          melhorRota.append(cidades[i])
-                
-           #     if dist < menorDistancia:
-            #        a = i
-        
-       # if menorDistancia > dist:
-        #    menorDistancia = dist
     
     return (melhorRota, menorDistancia)
 
