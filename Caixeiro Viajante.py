@@ -78,15 +78,3 @@ melhorRota, menorDistancia = CaixeiroViajante(cidades)
 print("\nMelhor rota:", melhorRota)
 print("\nMenor distância:", menorDistancia, "\n")
 
-                if ant > a and a != 0:
-                    menorDistancia = a
-
-                ant = menorDistancia
-
-        pos = pos + 1
-    
-    return (melhorRota, menorDistancia)
-
-melhorRota, menorDistancia = CaixeiroViajante(cidades)
-print("\nMelhor rota:", melhorRota)
-print("\nMenor distância:", menorDistancia, "\n")
