@@ -6,7 +6,7 @@ import platform
 cidades = [(0, 0), (1, 0), (3, 0), (10, 0), (2, 0)]
 
 def menu():
-    op = int(input("Caixeiro Viajante:\n 1: Ler através de ficheiro\n 2: Ler através de teclado\n 3: Sair do programa\n"))
+    op = int(input("\nCaixeiro Viajante:\n\n 1: Ler através de ficheiro\n 2: Ler através de teclado\n 3: Sair do programa\n\n"))
     if platform.system() == 'Windows':
         os.system('cls')
     else:
@@ -20,7 +20,7 @@ def menu():
         menu()
     elif op == 3: sys.exit()
     else: 
-        print("Opção inexistente, tente novamente:")
+        print("Opção inexistente! Tente novamente...")
         input()
         if platform.system() == 'Windows':
             os.system('cls')
@@ -29,6 +29,7 @@ def menu():
         menu()
 
 menu()
+
 def distance (location1, location2):
 
     x, y = location1
@@ -72,21 +73,15 @@ def CaixeiroViajante (cidades):
     
     return (melhorRota, menorDistancia)
 
-
-
 melhorRota, menorDistancia = CaixeiroViajante(cidades)
 print("\nMelhor rota:", melhorRota)
 print("\nMenor distância:", menorDistancia, "\n")
 
-                if ant > a and a != 0:
-                    menorDistancia = a
+input()
 
-                ant = menorDistancia
+if platform.system() == 'Windows':
+    os.system('cls')
+else:
+    os.system('clear')
 
-        pos = pos + 1
-    
-    return (melhorRota, menorDistancia)
-
-melhorRota, menorDistancia = CaixeiroViajante(cidades)
-print("\nMelhor rota:", melhorRota)
-print("\nMenor distância:", menorDistancia, "\n")
+menu()
