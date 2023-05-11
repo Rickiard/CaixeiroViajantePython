@@ -2,8 +2,6 @@ import math
 
 cidades = [(0, 0), (1, 0), (3, 0), (10, 0), (2, 0)]
 
-N = len(cidades) - 1
-
 def distance (location1, location2):
 
     x, y = location1
@@ -50,4 +48,3 @@ def CaixeiroViajante (cidades):
 melhorRota, menorDistancia = CaixeiroViajante(cidades)
 print("\nMelhor rota:", melhorRota)
 print("\nMenor distância:", menorDistancia, "\n")
-
