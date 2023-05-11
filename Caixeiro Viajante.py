@@ -1,7 +1,34 @@
 import math
+import sys
+import os
+import platform
 
 cidades = [(0, 0), (1, 0), (3, 0), (10, 0), (2, 0)]
 
+def menu():
+    op = int(input("Caixeiro Viajante:\n 1: Ler através de ficheiro\n 2: Ler através de teclado\n 3: Sair do programa\n"))
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+    if op == 1: 
+        print("1") 
+        menu()
+    elif op == 2: 
+        print("2")
+        
+        menu()
+    elif op == 3: sys.exit()
+    else: 
+        print("Opção inexistente, tente novamente:")
+        input()
+        if platform.system() == 'Windows':
+            os.system('cls')
+        else:
+            os.system('clear')
+        menu()
+
+menu()
 def distance (location1, location2):
 
     x, y = location1
@@ -35,6 +62,21 @@ def CaixeiroViajante (cidades):
                     if i == len(cidades):
                         jaPassou.append(o)
                         o = i
+
+                if ant > a and a != 0:
+                    menorDistancia = a
+
+                ant = menorDistancia
+
+        pos = pos + 1
+    
+    return (melhorRota, menorDistancia)
+
+
+
+melhorRota, menorDistancia = CaixeiroViajante(cidades)
+print("\nMelhor rota:", melhorRota)
+print("\nMenor distância:", menorDistancia, "\n")
 
                 if ant > a and a != 0:
                     menorDistancia = a
