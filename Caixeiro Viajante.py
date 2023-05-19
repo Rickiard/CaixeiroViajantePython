@@ -98,4 +98,23 @@ def menu():
     if op == 1:
         ler_cidades_do_ficheiro(nome_ficheiro = input("Introduza o nome do ficheiro: "))
         printar(cidades)
-... (21 linhas)
+    elif op == 2: 
+        ler_cidades_teclado()
+        printar(cidades)
+    elif op == 3: sys.exit()
+    else: 
+        print("Opção inexistente! Tente novamente...")
+        input()
+        if platform.system() == 'Windows':
+            os.system('cls')
+        else:
+            os.system('clear')
+        menu()
+
+while True:
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+    cidades.clear()
+    menu()
