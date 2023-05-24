@@ -5,11 +5,6 @@ import platform
 
 cidades = []
 
-if platform.system() == 'Windows':
-    os.system('cls')
-else:
-    os.system('clear')
-
 def distance (location1, location2):
 
     x, y = location1
