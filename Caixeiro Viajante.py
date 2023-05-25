@@ -49,7 +49,7 @@ def ler_cidades_do_ficheiro(nome_ficheiro):
     try:
         with open(nome_ficheiro, 'r') as ficheiro:
             for linha in ficheiro:
-                x, y = map(int, linha.split(','))
+                x, y = map(float, linha.split(','))
                 cidades.append((x, y))      
             if platform.system() == 'Windows':
                 os.system('cls')
