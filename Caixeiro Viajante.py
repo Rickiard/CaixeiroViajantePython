@@ -12,37 +12,34 @@ def distance (location1, location2):
 
     return math.sqrt(pow(x - a, 2) + pow(y - b, 2))
 
-def CaixeiroViajante (cidades):
+def CaixeiroViajante(cidades):
     melhorRota = [cidades[0]]
     menorDistancia = 0
-    a = 1000000
-    o = 0
-    pos = 1
-    jaPassou = []
+    jaPassou = set([cidades[0]])
 
     while len(melhorRota) != len(cidades):
-        aux = 10000000
-        ant = 100000000
-        dist = 1000000000
-        for i in range(len(cidades)):
-            if i != o and i not in jaPassou:
-                a = distance(cidades[o], cidades[i])
-                if aux > a:
-                    if pos in range(len(melhorRota)) and cidades[i] not in melhorRota:
-                        del (melhorRota[-1])
-                        melhorRota.append(cidades[i])
-                        aux = a
-                    elif cidades[i] not in melhorRota:
-                        melhorRota.append(cidades[i])
-                        aux = a
-                    if i == len(cidades):
-                        jaPassou.append(o)
-                        o = i
+        cidade_atual = melhorRota[-1]
+        distancia_minima = float('inf')
+        proxima_cidade = None
 
-        pos = pos + 1
+        for cidade in cidades:
+            if cidade not in jaPassou:
+                distancia = distance(cidade_atual, cidade)
+                if distancia < distancia_minima:
+                    distancia_minima = distancia
+                    proxima_cidade = cidade
+
+        if proxima_cidade is None:
+            break
+
+        melhorRota.append(proxima_cidade)
+        jaPassou.add(proxima_cidade)
+        menorDistancia += distancia_minima
+
     melhorRota.append(cidades[0])
-    for i in range(len(melhorRota) - 1):
-        menorDistancia = menorDistancia + distance(melhorRota[i], melhorRota[i+1])
+
+    menorDistancia += distance(melhorRota[-1], melhorRota[0])
+
     return (melhorRota, menorDistancia)
 
 def ler_cidades_do_ficheiro(nome_ficheiro):
