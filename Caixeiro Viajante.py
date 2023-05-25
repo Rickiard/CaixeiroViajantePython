@@ -36,9 +36,9 @@ def CaixeiroViajante(cidades):
         jaPassou.add(proxima_cidade)
         menorDistancia += distancia_minima
 
-    melhorRota.append(cidades[0])
-
     menorDistancia += distance(melhorRota[-1], melhorRota[0])
+    
+    melhorRota.append(cidades[0])
 
     return (melhorRota, menorDistancia)
 
