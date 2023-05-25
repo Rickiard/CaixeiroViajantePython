@@ -67,7 +67,16 @@ def ler_cidades_do_ficheiro(nome_ficheiro):
         ler_cidades_do_ficheiro(nome_ficheiro = input("Introduza o nome do ficheiro: "))
 
 def ler_cidades_teclado():
-    N = int(input("Digite o número de cidades: "))
+    N = 0
+    while N <= 1:
+        if platform.system() == 'Windows':
+            os.system('cls')
+        else:
+            os.system('clear')
+        N = int(input("Digite o número de cidades: "))
+        if  N <= 1:
+            print("\nNão pode ter essa quantidade\n")
+            input()
     for i in range(N):
         cidade = eval(input(f"\nQuais são as coordenadas da cidade {i+1} ('x,y'): "))
         cidades.append(cidade)
